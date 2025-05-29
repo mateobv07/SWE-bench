@@ -70,7 +70,7 @@ KEY_PREDICTION = "model_patch"
 # Constants - Harness
 DOCKER_PATCH = "/tmp/patch.diff"
 DOCKER_USER = "root"
-DOCKER_WORKDIR = "/test_repo_swe_agent"
+DOCKER_WORKDIR = "/elunac19__test_repo_swe_agent"
 LOG_REPORT = "report.json"
 LOG_INSTANCE = "run_instance.log"
 LOG_TEST_OUTPUT = "test_output.txt"
