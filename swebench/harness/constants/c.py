@@ -168,6 +168,25 @@ SPECS_MICROPYTHON = {
     },
 }
 
+SPECS_GTEST = {
+    "2": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target findMax_test",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R findMax_test"],
+        },
+    "27": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target randomSelection_test",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R randomSelection_test"],
+        }
+}
+
 SPECS_VALKEY = {
     "928": {
         "build": ["make distclean", "make"],
@@ -249,6 +268,7 @@ MAP_REPO_VERSION_TO_SPECS_C = {
     "micropython/micropython": SPECS_MICROPYTHON,  # c
     "valkey-io/valkey": SPECS_VALKEY,  # c
     "fmtlib/fmt": SPECS_FMT,  # c++
+    "elunca19/test_repo_swe_agent": SPECS_GTEST,
 }
 
 # Constants - Repository Specific Installation Instructions

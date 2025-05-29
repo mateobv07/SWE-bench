@@ -134,4 +134,5 @@ MAP_REPO_TO_PARSER_C = {
     "micropython/micropython": parse_log_micropython_test,
     "valkey-io/valkey": parse_log_redis,
     "fmtlib/fmt": parse_log_googletest,
+    "elunac19/test_repo_swe_agent" : parse_log_googletest,
 }
