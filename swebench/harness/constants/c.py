@@ -268,7 +268,7 @@ MAP_REPO_VERSION_TO_SPECS_C = {
     "micropython/micropython": SPECS_MICROPYTHON,  # c
     "valkey-io/valkey": SPECS_VALKEY,  # c
     "fmtlib/fmt": SPECS_FMT,  # c++
-    "elunca19/test_repo_swe_agent": SPECS_GTEST,
+    "elunac19/test_repo_swe_agent": SPECS_GTEST,
 }
 
 # Constants - Repository Specific Installation Instructions
