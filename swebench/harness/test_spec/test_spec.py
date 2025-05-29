@@ -110,6 +110,8 @@ class TestSpec:
         key = f"sweb.eval.{self.arch}.{self.instance_id.lower()}:{self.instance_image_tag}"
         if self.is_remote_image:
             key = f"{self.namespace}/{key}".replace("__", "_1776_")
+        if self.instance_id.includes("elunac") :
+            return "mateobv07/cpp-dev-env"
         return key
 
     @property
