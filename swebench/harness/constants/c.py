@@ -184,6 +184,14 @@ SPECS_GTEST = {
             "cmake --build build --parallel $(nproc) --target randomSelection_test",
         ],
         "test_cmd": ["ctest --test-dir build -V -R randomSelection_test"],
+        },
+    "3": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target shapeTest",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R shapeTest"],
         }
 }
 
