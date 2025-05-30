@@ -44,6 +44,8 @@ class TestSpec:
     language: str
     docker_specs: dict
     namespace: Optional[str]
+    image_name: str
+    base_commit: str
     base_image_tag: str = LATEST
     env_image_tag: str = LATEST
     instance_image_tag: str = LATEST
@@ -110,8 +112,8 @@ class TestSpec:
         key = f"sweb.eval.{self.arch}.{self.instance_id.lower()}:{self.instance_image_tag}"
         if self.is_remote_image:
             key = f"{self.namespace}/{key}".replace("__", "_1776_")
-        if "elunac" in self.instance_id :
-            return "mateobv07/cpp-dev-env"
+        if self.image_name is not None:
+            return self.image_name
         return key
 
     @property
@@ -193,6 +195,7 @@ def make_test_spec(
     problem_statement = instance.get("problem_statement")
     hints_text = instance.get("hints_text")  # Unused
     test_patch = instance["test_patch"]
+    image_name = instance["image_name"]
 
     def _from_json_or_obj(key: str) -> Any:
         """If key points to string, load with json"""
@@ -240,4 +243,6 @@ def make_test_spec(
         base_image_tag=base_image_tag,
         env_image_tag=env_image_tag,
         instance_image_tag=instance_image_tag,
+        image_name=image_name,
+        base_commit=base_commit,
     )

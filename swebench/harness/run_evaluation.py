@@ -153,6 +153,12 @@ def run_instance(
 
         # Attempt to apply patch to container (TODO: FIX THIS)
         applied_patch = False
+        if "elunac" in test_spec.repo:
+            container.exec_run(
+                f"git reset --hard {test_spec.base_commit}",
+                workdir=DOCKER_WORKDIR,
+                user=DOCKER_USER,
+            )
         for git_apply_cmd in GIT_APPLY_CMDS:
             val = container.exec_run(
                 f"{git_apply_cmd} {DOCKER_PATCH}",
