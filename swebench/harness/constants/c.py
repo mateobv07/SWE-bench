@@ -185,13 +185,61 @@ SPECS_GTEST = {
         ],
         "test_cmd": ["ctest --test-dir build -V -R randomSelection_test"],
         },
+    "28": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target findMin_test",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R findMin_test"],
+        },
+    "30": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target statistics_test",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R statistics_test"],
+        },
+    "33": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target temperatureAnalyzer_test",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R temperatureAnalyzer_test"],
+        },
+    "35": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target efficiencyCalculator_test",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R efficiencyCalculator_test"],
+        },
+    "37": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target score_test",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R score_test"],
+        },
+    "39": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target divider_test",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R divider_test"],
+        },
     "3": {
         "build": [
             "mkdir -p build",
             "cmake -B build -S .",
-            "cmake --build build --parallel $(nproc) --target shapeTest",
+            "cmake --build build --parallel $(nproc) --target areaCalc_test",
         ],
-        "test_cmd": ["ctest --test-dir build -V -R shapeTest"],
+        "test_cmd": ["ctest --test-dir build -V -R areaCalc_test"],
         }
 }
 
