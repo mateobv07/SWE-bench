@@ -286,12 +286,9 @@ def make_eval_script_list_py(
     Applies the test patch and runs the tests.
     """
     HEREDOC_DELIMITER = "EOF_114329324912"
-    try:
-        test_files = get_modified_files(test_patch)
-    except UnidiffParseError as e:
-        print(instance)
-        print(test_patch)
-        print(e)
+    print(instance)
+    test_files = get_modified_files(test_patch)
+
     # Reset test files to the state they should be in before the patch.
     reset_tests_command = f"git checkout {base_commit} {' '.join(test_files)}"
     apply_test_patch_command = (
