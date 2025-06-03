@@ -15,6 +15,7 @@ from swebench.harness.constants import (
     END_TEST_OUTPUT,
 )
 from swebench.harness.utils import get_modified_files
+from unidiff.errors import UnidiffParseError
 from functools import cache
 
 HEADERS = {
@@ -287,7 +288,8 @@ def make_eval_script_list_py(
     HEREDOC_DELIMITER = "EOF_114329324912"
     try:
         test_files = get_modified_files(test_patch)
-    except Exception as e:
+    except UnidiffParseError as e:
+        print(instance)
         print(test_patch)
         print(e)
     # Reset test files to the state they should be in before the patch.
