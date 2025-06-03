@@ -233,6 +233,38 @@ SPECS_GTEST = {
         ],
         "test_cmd": ["ctest --test-dir build -V -R divider_test"],
         },
+    "40": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target pokemon_test",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R pokemon_test"],
+        },
+    "41": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target pokemon_test",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R pokemon_test"],
+        },
+    "42": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target pokemon_test",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R pokemon_test"],
+        },
+    "43": {
+        "build": [
+            "mkdir -p build",
+            "cmake -B build -S .",
+            "cmake --build build --parallel $(nproc) --target pokemon_test",
+        ],
+        "test_cmd": ["ctest --test-dir build -V -R pokemon_test"],
+        },
     "3": {
         "build": [
             "mkdir -p build",
