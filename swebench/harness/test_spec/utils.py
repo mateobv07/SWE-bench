@@ -63,6 +63,7 @@ def make_eval_script_list_common(
     Applies the test patch and runs the tests.
     """
     HEREDOC_DELIMITER = "EOF_114329324912"
+    print(test_patch)
     test_files = get_modified_files(test_patch)
     # Reset test files to the state they should be in before the patch.
     if test_files:
